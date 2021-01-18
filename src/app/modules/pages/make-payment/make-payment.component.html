@@ -1,0 +1,118 @@
+<div class="container">
+  <section class="assignedToMe">
+    <h4 class="text-white bg-dark py-3 px-3 my-0">Payment Pending</h4>
+    <div
+      class="table-wrapper-border border border-1 border-dark px-3 pt-3 pb-0"
+    >
+      <div class="d-flex justify-content-between">
+        <div>
+          <span>Show</span
+          ><select name="" id="" class="ml-2">
+            <option value="10" selected="" ng-reflect-value="10">10</option>
+            <option value="20" ng-reflect-value="20">20</option>
+            <option value="30" ng-reflect-value="30">30</option></select
+          ><span class="ml-2">entries</span>
+        </div>
+        <div>
+          <div class="form-group">
+            <input
+              type="text"
+              placeholder="Quick search"
+              class="form-control form-control-sm"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th>Action</th>
+                <th>Form ID</th>
+                <th>Year</th>
+                <th>Status</th>
+                <th>Type</th>
+                <th>Applied Date</th>
+                <th>Ward No</th>
+                <th>Comapny/Firm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="
+                  let response of responseToShowWithinTable;
+                  let i = index
+                "
+              >
+                <td>
+                  <!-- <button
+                    class="btn btn-primary btn-sm"
+                    (click)="onFormNoClick(response['Form_No'])"
+                  >
+                    <i class="fa fa-arrow-right"></i>
+                  </button> -->
+                  <div class="btn-group dropdown">
+                    <button
+                      class="btn btn-primary btn-sm dropdown-toggle"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                      type="button"
+                    ></button>
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <!-- <span>{{ shouldHideProcessFollowup }}</span> -->
+                      <a
+                        class="dropdown-item"
+                        (click)="onFormNoClick($event, response['Form_No'])"
+                        >Payment
+                      </a>
+                      <!-- only show process when shouldHideProcessWithinSecondTable is not true == false -->
+                      <!-- <a
+                        *ngIf="!shouldHideProcessWithinSecondTable"
+                        class="dropdown-item"
+                        (click)="onFormNoClick($event, response['Form_No'])"
+                        >Process</a
+                      > -->
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  {{ response["Form_No"] }}
+                </td>
+                <td>{{ response["Fin_Year_Sht_Name"] }}</td>
+                <td>{{ response["Status_Name"] }}</td>
+                <td>{{ response["TL_Type"] }}</td>
+                <td>{{ response["Applied_On"] }}</td>
+                <td>{{ response["Ward_No"] }}</td>
+                <td>{{ response["Name_Org"] }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <span>Showing 1 of 50</span>
+        <div>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a href="#" tabindex="-1" aria-disabled="true" class="page-link"
+                  >Previous</a
+                >
+              </li>
+              <li class="page-item"><a href="#" class="page-link">1</a></li>
+              <li class="page-item"><a href="#" class="page-link">2</a></li>
+              <li class="page-item"><a href="#" class="page-link">3</a></li>
+              <li class="page-item"><a href="#" class="page-link">Next</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

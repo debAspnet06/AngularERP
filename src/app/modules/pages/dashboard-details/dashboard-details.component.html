@@ -1,0 +1,1460 @@
+<div class="pcoded-content pb-30px">
+  <div class="row">
+    <div
+      *ngIf="formdataByFormNo?.length > 0"
+      class="col-10"
+      style="font-weight: bold; font-size: 1rem"
+    >
+      <span>Form No: {{ formdataByFormNo[0]["Form_No"] }}</span>
+      <span class="ml-2" style="color: #795548"
+        >Org: {{ formdataByFormNo[0]["Name_Org"] }}</span
+      >
+    </div>
+    <div class="col justify-content-end">
+      <button class="btn btn-primary btn-sm ml-5" (click)="goBackButton()">
+        Go Back
+      </button>
+    </div>
+  </div>
+  <!-- Row 1 /start -->
+  <div class="row my-3">
+    <h5 class="section-title w-100 p-2" *ngIf="false">
+      Property Owner Details
+    </h5>
+    <!-- 01/14/2021 Design Change -->
+    <div class="col-12 m-0 p-0">
+      <div class="card table-card" *ngIf="true">
+        <div class="card-header bg-primary">
+          <h5 class="text-white">
+            <span class="mr-2"><i class="fas fa-home"></i></span>
+            Property Owner Details
+          </h5>
+        </div>
+        <div class="card-body mb-0 pb-0 pb-0">
+          <div class="table-responsive">
+            <table class="table table-hover table-borderless mb-0">
+              <thead>
+                <tr>
+                  <!-- <th class="text-right">Id Number</th> -->
+                  <th>Assessee / Holding No</th>
+                  <th>Owner Name</th>
+                  <th>Street</th>
+                  <th>Locality Name</th>
+                  <th>Ward No.</th>
+                  <th>Type of Tax</th>
+                  <th>Property Tax</th>
+                  <th>Status</th>
+                  <th>Type of Land</th>
+                  <th>Issue Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- loop on and based on loop item make that many roww with these -->
+                <tr>
+                  <!-- <td>#467</td> -->
+                  <td class="border-0">
+                    {{ formdataByFormNo[0]["Assessee_Holding_No"] }}
+                  </td>
+                  <td class="border-0">
+                    {{ formdataByFormNo[0]["Property_Owner_Name"] }}
+                  </td>
+                  <td class="border-0">
+                    {{ formdataByFormNo[0]["Street"] }}
+                  </td>
+                  <!-- <td class="border-0">
+                    <a href="#!" class="badge badge-light-primary">Active</a>
+                  </td> -->
+                  <td class="border-0">
+                    {{ formdataByFormNo[0]["Locality_Name"] }}
+                    <!-- <a href="#!"
+                      ><i class="fa fa-star f-14 text-warning"></i
+                    ></a>
+                    <a href="#!"
+                      ><i class="fa fa-star f-14 text-warning"></i
+                    ></a>
+                    <a href="#!"
+                      ><i class="fa fa-star f-14 text-warning"></i
+                    ></a>
+                    <a href="#!"
+                      ><i class="fa fa-star f-14 text-warning"></i
+                    ></a>
+                    <a href="#!"
+                      ><i class="fa fa-star f-14 text-black-50"></i
+                    ></a> -->
+                  </td>
+                  <td class="border-0 text-center">
+                    {{ formdataByFormNo[0]["Ward"] }}
+                  </td>
+                  <td class="border-0">
+                    <a href="" class="badge badge-light-primary">{{
+                      formdataByFormNo[0]["Tax_Paid_Type"]
+                    }}</a>
+                  </td>
+                  <td class="border-0">
+                    {{ formdataByFormNo[0]["Tax_Paid_Amount"] }}
+                  </td>
+                  <td class="border-0">
+                    {{ formdataByFormNo[0]["Tax_Status"] }}
+                  </td>
+                  <td class="border-0">
+                    {{ formdataByFormNo[0]["Land_Nature"] }}
+                  </td>
+                  <td class="border-0">
+                    {{ formdataByFormNo[0]["Applied_On"] }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="ps__rail-x" style="left: 0px; bottom: 0px">
+              <div
+                class="ps__thumb-x"
+                tabindex="0"
+                style="left: 0px; width: 0px"
+              ></div>
+            </div>
+            <div class="ps__rail-y" style="top: 0px; height: 375px; right: 0px">
+              <div
+                class="ps__thumb-y"
+                tabindex="0"
+                style="top: 0px; height: 332px"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 01/14/2021 Design Change -->
+
+    <!-- Left Side /start -->
+    <div class="col-6" *ngIf="false">
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Assessee / Holding No</span>
+        <!-- <span>{{ formdataByFormNo[0]["Assessee_Holding_No"] }}</span> -->
+        <span class="w-100 light-bg">{{
+          formdataByFormNo[0]["Assessee_Holding_No"]
+        }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Owner Name</span>
+        <span class="w-100 light-bg">{{
+          formdataByFormNo[0]["Property_Owner_Name"]
+        }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Street</span>
+        <span class="w-100 light-bg">{{ formdataByFormNo[0]["Street"] }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Locality Name</span>
+        <span class="w-100 light-bg">{{
+          formdataByFormNo[0]["Locality_Name"]
+        }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Ward No.</span>
+        <span class="w-100 light-bg">{{ formdataByFormNo[0]["Ward"] }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Type of Tax</span>
+        <span class="w-100 light-bg">{{
+          formdataByFormNo[0]["Tax_Paid_Type"]
+        }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Property Tax</span>
+        <span class="w-100 light-bg">{{
+          formdataByFormNo[0]["Tax_Paid_Amount"]
+        }}</span>
+      </div>
+    </div>
+    <!-- Left Side /end -->
+    <!-- Right Side /start -->
+    <!-- Right Side /start -->
+    <!-- Right Side /end -->
+    <div class="col-6" *ngIf="false">
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Status</span>
+        <span class="w-100 light-bg">{{
+          formdataByFormNo[0]["Tax_Status"]
+        }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Type of Land</span>
+        <span class="w-100 light-bg">{{
+          formdataByFormNo[0]["Land_Nature"]
+        }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Issue Date</span>
+        <span class="w-100 light-bg">{{
+          formdataByFormNo[0]["Applied_On"]
+        }}</span>
+      </div>
+      <!-- <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Expiration Date</span>
+        <span class="w-100 light-bg">Test</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Valuation</span>
+        <span class="w-100 light-bg">Test</span>
+      </div> -->
+      <!-- <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Form Number</span>
+        <span class="w-100 light-bg">{{ formdataByFormNo[0]["Form_No"] }}</span>
+      </div> -->
+    </div>
+    <!-- Right Side /end -->
+    <!-- Left Side /start -->
+    <!-- Left Side /end -->
+    <!-- Right Side /start -->
+    <!-- Right Side /end -->
+  </div>
+  <!-- Row 1 /end -->
+
+  <!-- Row 2 /end -->
+  <!-- Row 3 /start -->
+  <div class="row my-3">
+    <!-- 01/14/2021 Design Change -->
+    <div class="col-md-12 p-0 m-0">
+      <div class="card table-card">
+        <div class="card-header bg-primary">
+          <h5 class="text-white">
+            <span class="mr-2"><i class="feather icon-list"></i></span>
+            Trade Details
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover mb-0 table-borderless">
+              <thead>
+                <tr>
+                  <th>Type of Business</th>
+                  <th>For the Year</th>
+                  <th>Name of the company</th>
+                  <th>Applied Date</th>
+                  <th>Investment of capital</th>
+                  <th>GST</th>
+                  <th>PAN</th>
+                  <th>Contact</th>
+                  <th>Contact address</th>
+                  <th>Workshop</th>
+                  <th>Godown</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border-0 text-center">
+                    {{ formdataByFormNo[0]["Trade_Nature"] }}
+                  </td>
+                  <td class="border-0 text-center">
+                    {{ formdataByFormNo[0]["Fin_Year_Sht_Name"] }}
+                  </td>
+                  <td class="border-0 text-center">
+                    {{ formdataByFormNo[0]["Name_Org"] }}
+                  </td>
+                  <td class="border-0 text-center">
+                    {{ formdataByFormNo[0]["Applied_On"] }}
+                  </td>
+                  <td class="border-0 text-center">
+                    {{ formdataByFormNo[0]["Capital"] }}
+                  </td>
+                  <td class="border-0 text-center">
+                    {{ formdataByFormNo[0]["GST_IN"] }}
+                  </td>
+                  <td class="border-0 text-center">
+                    {{ formdataByFormNo[0]["Company_PAN"] }}
+                  </td>
+                  <td class="border-0 text-center">
+                    {{ formdataByFormNo[0]["Con_No"] }}
+                  </td>
+                  <td class="border-0 text-center">
+                    {{ formdataByFormNo[0]["Con_add"] }}
+                  </td>
+                  <td class="border-0 text-center">
+                    {{ formdataByFormNo[0]["Workshop"] }}
+                  </td>
+                  <td class="border-0 text-center">
+                    {{ formdataByFormNo[0]["Godown"] }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 01/14/2021 Design Change -->
+
+    <h5 class="section-title w-100 p-2" *ngIf="false">Trade Details</h5>
+    <!-- Left Side /start -->
+    <div class="col-6" *ngIf="false">
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Type of Business</span>
+        <span class="w-100 light-bg">{{
+          formdataByFormNo[0]["Trade_Nature"]
+        }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">For the Year</span>
+        <span class="w-100 light-bg">{{
+          formdataByFormNo[0]["Fin_Year_Sht_Name"]
+        }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Name of the company</span>
+        <span class="w-100 light-bg">Test</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Applied Date</span>
+        <span class="w-100 light-bg">{{
+          formdataByFormNo[0]["Applied_On"]
+        }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Investment of capital</span>
+        <span class="w-100 light-bg">{{ formdataByFormNo[0]["Capital"] }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">GST</span>
+        <span class="w-100 light-bg">{{ formdataByFormNo[0]["GST_IN"] }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">PAN</span>
+        <span class="w-100 light-bg">{{
+          formdataByFormNo[0]["Company_PAN"]
+        }}</span>
+      </div>
+    </div>
+    <!-- Left Side /end -->
+    <!-- Right Side /start -->
+    <div class="col-6" *ngIf="false">
+      <!-- <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">GST</span>
+        <span class="w-100 light-bg">{{ formdataByFormNo[0]["GST_IN"] }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">PAN</span>
+        <span class="w-100 light-bg">{{
+          formdataByFormNo[0]["Company_PAN"]
+        }}</span>
+      </div> -->
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Contact</span>
+        <span class="w-100 light-bg">{{ formdataByFormNo[0]["Con_No"] }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Contact address</span>
+        <span class="w-100 light-bg">{{ formdataByFormNo[0]["Con_add"] }}</span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Workshop</span>
+        <span class="w-100 light-bg">
+          {{ formdataByFormNo[0]["Workshop"] }}
+        </span>
+      </div>
+      <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Godown</span>
+        <span class="w-100 light-bg">{{ formdataByFormNo[0]["Godown"] }}</span>
+      </div>
+      <!-- <div class="d-flex justify-content-between dark-border">
+        <span class="pl-2 w-100 h-100">Form Number</span>
+        <span class="w-100 light-bg">{{ formdataByFormNo[0]["Form_No"] }}</span>
+      </div> -->
+    </div>
+    <!-- Right Side /end -->
+  </div>
+  <!-- Row 3 /start -->
+  <div class="row my-3">
+    <!-- <div class="section-title w-100 p-2">
+      <h5 class="section-title w-100 p-2">Trade Types</h5>
+    </div> -->
+    <!-- <ng-container *ngIf="formTradeTypeValues?.length > 0">
+      <div class="col-12">
+        <div class="row my-3">
+          <div class="col-6">
+            <span class="font-weight-bold">Trade Size</span>
+          </div>
+          <div>
+            <span class="font-weight-bold">{{
+              formTradeTypeValues[0]["Trade_size"]
+            }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="row my-3">
+          <div class="col-6">
+            <span class="font-weight-bold">Trade Type</span>
+          </div>
+          <div>
+            <span class="font-weight-bold">{{
+              formTradeTypeValues[0]["Trade_Type"]
+            }}</span>
+          </div>
+        </div>
+      </div>
+    </ng-container> -->
+    <!-- <div class="table-responsive">
+      <table class="table mt-2">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Trade Size</th>
+            <th scope="col">Trade Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let type of formTradeTypeValues; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ formTradeTypeValues[0]["Trade_size"] }}</td>
+            <td>{{ formTradeTypeValues[0]["Trade_Type"] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> -->
+
+    <!-- 01/14/2021 Design Change -->
+    <div class="col-md-12 m-0 p-0">
+      <div class="card table-card latest-activity-card">
+        <div class="card-header border-0 bg-primary">
+          <h5 class="text-white">
+            <span class="mr-2"><i class="fas fa-business-time"></i></span>
+            Trade Types
+          </h5>
+        </div>
+        <div class="card-body mb-0 pb-0">
+          <div class="">
+            <table class="table table-hover table-borderless">
+              <thead>
+                <tr>
+                  <th>Row</th>
+                  <th>Trade Type Name</th>
+                  <th>Trade Size</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  *ngFor="let type of formTradeTypeValues; let i = index"
+                  class="border-0"
+                >
+                  <th class="border-0">{{ i + 1 }}</th>
+                  <td class="border-0">
+                    {{ formTradeTypeValues[0]["Trade_size"] }}
+                  </td>
+                  <td class="border-0">
+                    {{ formTradeTypeValues[0]["Trade_Type"] }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 01/14/2021 Design Change -->
+
+    <div class="table-responsive" *ngIf="false">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Row</th>
+            <th scope="col">Trade Type Name</th>
+            <th scope="col">Trade Size</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let type of formTradeTypeValues; let i = index">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ formTradeTypeValues[0]["Trade_size"] }}</td>
+            <td>{{ formTradeTypeValues[0]["Trade_Type"] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Row 4 /end -->
+  <!-- Row 5 /start -->
+  <div class="row my-3">
+    <!-- 01/14/2021 Design Change -->
+    <div class="col-md-12 p-0 m-0">
+      <div class="card table-card">
+        <div class="card-header border-0 bg-primary">
+          <h5 class="text-white">
+            <span class="mr-2"><i class="far fa-file-image"></i></span> File
+            Manager
+          </h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Document Name</th>
+                  <th>Status/Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let save of savedfileMangerImages; index as i">
+                  <td class="border-0">
+                    <span class="font-weight-bold">{{
+                      save["Document_Name"]
+                    }}</span>
+                  </td>
+                  <td class="border-0">
+                    <!-- *ngIf="save.file_Url?.length > 0 && save.columnIndex == i" -->
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-sm"
+                      (click)="onShowImageModal(save)"
+                    >
+                      SHOW
+                    </button>
+                    <!-- <ng-container
+                      *ngIf="!save.file_Url || save.columnIndex !== i"
+                    >
+                      <span style="font-weight: bold">Not available</span>
+                    </ng-container> -->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 01/14/2021 Design Change -->
+
+    <div class="section-title w-100 p-2" *ngIf="false">
+      <h5 class="section-title w-100 p-2">File Manager</h5>
+    </div>
+    <!-- <div class="col-12">
+      <div class="table-responsive">
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <th scope="col" *ngFor="let file of fileManager">
+                {{ file["Document_name"] }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td *ngFor="let save of savedfileMangerImages; index as i">
+
+                <button
+                  *ngIf="save.file_Url && save.columnIndex == i"
+                  type="button"
+                  data-toggle="modal"
+                  data-target="#exampleModal"
+                  class="btn btn-primary btn-sm"
+                  (click)="onShowImageModal(save)"
+                >
+                  SHOW
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div> -->
+    <div class="col-12" *ngIf="false">
+      <div
+        class="row my-3"
+        *ngFor="let save of savedfileMangerImages; index as i"
+      >
+        <div class="col-6">
+          <span class="font-weight-bold">{{ save["Document_Name"] }}</span>
+        </div>
+        <div class="col-6">
+          <!-- <button
+            *ngIf="save.file_Url && save.columnIndex == i"
+            type="button"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            class="btn btn-primary btn-sm"
+            (click)="onShowImageModal(save)"
+          >
+            SHOW
+          </button> -->
+          <button
+            *ngIf="save.file_Url?.length > 0 && save.columnIndex == i"
+            type="button"
+            class="btn btn-primary btn-sm"
+            (click)="onShowImageModal(save)"
+          >
+            SHOW
+          </button>
+          <ng-container *ngIf="!save.file_Url || save.columnIndex !== i">
+            <span style="font-weight: bold">Not available</span>
+          </ng-container>
+        </div>
+        <!-- {{ save.file_Url | json }} -->
+      </div>
+    </div>
+  </div>
+  <!-- Row 5 /end -->
+  <!-- Row 6 /start -->
+  <div class="row my-3">
+    <!-- 01/14/2021 Design Change -->
+    <div class="col-md-12 m-0 p-0">
+      <div class="card table-card latest-activity-card">
+        <div class="card-header border-0 bg-primary">
+          <h5 class="text-white">
+            <span class="mr-2"><i class="fas fa-credit-card"></i></span>
+            Finance Manager
+          </h5>
+          <div class="card-header-right mt-2">
+            <button
+              [hidden]="!shouldHidePayBtn"
+              class="btn btn-sm btn-light-primary"
+              data-toggle="modal"
+              data-target="#theFollowUp"
+            >
+              PAY
+            </button>
+          </div>
+        </div>
+        <div class="card-body mb-0 pb-0">
+          <div class="">
+            <table class="table table-hover table-borderless">
+              <thead>
+                <tr>
+                  <th>Total Fee 118</th>
+                  <th>Total_fee 201</th>
+                  <th>Total Arrear</th>
+                  <th>Adjustment</th>
+                  <th>Net Payble</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border-0">
+                    {{ formdataByFormNo[0]["Total_Fee_118"] }}
+                  </td>
+                  <td class="border-0">
+                    {{ formdataByFormNo[0]["Total_Fee_201"] }}
+                  </td>
+                  <td class="border-0">
+                    {{ formdataByFormNo[0]["Total_Arrear"] }}
+                  </td>
+                  <td class="border-0">
+                    {{ formdataByFormNo[0]["Adjustment"] }}
+                  </td>
+                  <td class="border-0">
+                    {{ formdataByFormNo[0]["Net_Payable"] }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 01/14/2021 Design Change -->
+
+    <div class="section-title w-100 p-2 mb-3" *ngIf="false">
+      <div class="d-flex justify-content-between">
+        <h5 class="section-title w-100 p-2">Finance Manager</h5>
+        <!-- <h5>isMenupay: {{ isMenuPayment }}</h5> -->
+        <!-- <h5>payBtn: {{ shouldHidePayBtn }}</h5> -->
+        <!-- button will only be hiddem when shouldHidepayBtn's default value is not -->
+        <button
+          [hidden]="!shouldHidePayBtn"
+          class="btn btn-primary btn-sm"
+          data-toggle="modal"
+          data-target="#theFollowUp"
+        >
+          PAY
+        </button>
+      </div>
+    </div>
+
+    <div class="col-6 dark-border" *ngIf="false">
+      Toal Fee_118:: {{ formdataByFormNo[0]["Total_Fee_118"] }}
+    </div>
+    <!-- <div class="col-6 dark-border">
+          <span class= w-100 d-inline-block h-100"
+            ><i class="fas fa-rupee-sign"></i><span class="ml-2">50.00</span></i></span
+          >
+        </div> -->
+
+    <div class="col-6 dark-border" *ngIf="false">
+      Total_fee_201:: {{ formdataByFormNo[0]["Total_Fee_201"] }}
+    </div>
+    <!-- <div class="col-6 dark-border">
+          <span class= w-100 d-inline-block h-100"
+            ><i class="fas fa-rupee-sign"></i><span class="ml-2">50.00</span></i></span
+          >
+        </div> -->
+
+    <div class="col-6 dark-border" *ngIf="false">
+      Total Arrear:: {{ formdataByFormNo[0]["Total_Arrear"] }}
+    </div>
+    <!-- <div class="col-6 dark-border">
+          <span class= w-100 d-inline-block h-100"
+            ><i class="fas fa-rupee-sign"></i><span class="ml-2">50.00</span></i></span
+          >
+        </div> -->
+
+    <div class="col-6 dark-border" *ngIf="false">
+      Adjustment:: {{ formdataByFormNo[0]["Adjustment"] }}
+    </div>
+    <div class="col-6 dark-border" *ngIf="false">
+      Net Payble:: {{ formdataByFormNo[0]["Net_Payable"] }}
+    </div>
+    <!-- <div class="col-6 dark-border">
+          <span class= w-100 d-inline-block h-100">
+            <i class="fas fa-rupee-sign"></i>
+            <span class="ml-2">50.00</span></span>
+        </div> -->
+  </div>
+  <!-- Row 6 /end -->
+  <div class="row justify-content-between my-3">
+    <div class="section-title w-100 p-2 mb-3" *ngIf="false">
+      <div class="d-flex justify-content-between">
+        <h5 class="section-title w-100 p-2 text-white">Followup Manager</h5>
+        <!-- <h5 class="text-white">{{ shouldHideForwardButton }}</h5> -->
+        <!-- <h5 class="text-white">View:{{ isSessionStoragView }}</h5> -->
+        <button
+          [hidden]="
+            shouldHideForwardButton ||
+            isSessionStoragView ||
+            isMenuPayment ||
+            isMenuFee
+          "
+          class="btn btn-primary btn-sm"
+          data-toggle="modal"
+          data-target="#theFollowUp"
+          (click)="onForwardClick()"
+        >
+          Forward/Hold
+        </button>
+      </div>
+    </div>
+    <!-- <div class="col-12">
+      <div class="row my-3">
+        <div class="col-6">
+          <span class="font-weight-bold">Followup Date</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">{{
+            formTradeFollowUpValues[0]["Followup_Date"]
+          }}</span>
+        </div>
+      </div>
+
+      <div class="row my-3">
+        <div class="col-6">
+          <span class="font-weight-bold">Followup By Citizen</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">{{
+            formTradeFollowUpValues[0]["Followup_by_e_cityzen_name"]
+          }}</span>
+        </div>
+      </div>
+
+      <div class="row my-3">
+        <div class="col-6">
+          <span class="font-weight-bold">Followup By User</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">{{
+            formTradeFollowUpValues[0]["Followup_by_user_name"]
+          }}</span>
+        </div>
+      </div>
+
+      <div class="row my-3">
+        <div class="col-6">
+          <span class="font-weight-bold">Form Status</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">{{
+            formTradeFollowUpValues[0]["Form_Status"]
+          }}</span>
+        </div>
+      </div>
+
+      <div class="row my-3">
+        <div class="col-6">
+          <span class="font-weight-bold">Next Followup By Citizen</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">{{
+            formTradeFollowUpValues[0]["Next_Followup_by_e_cityzen_name"]
+          }}</span>
+        </div>
+      </div>
+
+      <div
+        class="row my-3"
+        *ngIf="formTradeFollowUpValues[0].Next_Followup_by_user_name?.length > 0"
+      >
+        <div class="col-6">
+          <span class="font-weight-bold">Next Followup User</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">{{
+            formTradeFollowUpValues[0]["Next_Followup_by_user_name"]
+          }}</span>
+        </div>
+      </div>
+
+      <div class="row my-3">
+        <div class="col-6">
+          <span class="font-weight-bold">Remarks</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">{{
+            formTradeFollowUpValues[0]["Remarks"]
+          }}</span>
+        </div>
+      </div>
+
+      <div class="row my-3">
+        <div class="col-6">
+          <span class="font-weight-bold">Next Followup Completed</span>
+        </div>
+        <div>
+          <span class="font-weight-bold">{{
+            formTradeFollowUpValues[0]["Sent_To_Date"]
+          }}</span>
+        </div>
+      </div>
+    </div> -->
+    <!-- start new table desing here -->
+
+    <!-- 1/14/2021 Table Design -->
+    <div class="col-12 m-0 p-0">
+      <div class="card table-card" *ngIf="true">
+        <div class="card-header bg-primary">
+          <h5 class="text-white">
+            <span class="mr-2"><i class="fas fa-user-check"></i></span>
+            Followup Manager
+          </h5>
+          <div class="card-header-right mt-2">
+            <button
+              [hidden]="
+                shouldHideForwardButton || isSessionStoragView || isMenuPayment
+              "
+              class="btn btn-sm btn-light-primary"
+              data-toggle="modal"
+              data-target="#theFollowUp"
+              (click)="onForwardClick()"
+            >
+              Forward/Hold
+            </button>
+            <!-- <div class="btn-group card-option">
+              <button
+                type="button"
+                class="btn dropdown-toggle"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="feather icon-more-horizontal"></i>
+              </button>
+              <ul
+                class="list-unstyled card-option dropdown-menu dropdown-menu-right"
+                style=""
+              >
+                <li class="dropdown-item full-card">
+                  <a href="#!">
+                    <span
+                      ><i class="feather icon-maximize"></i> Forward/Hold</span
+                    >
+
+                    <span style="display: none">
+                      <i class="feather icon-minimize"></i> Restore
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+        <div class="card-body mb-0 pb-0 pb-0">
+          <div class="table-responsive">
+            <table class="table table-hover table-borderless mb-0">
+              <thead>
+                <tr>
+                  <th class="text-center">Date</th>
+                  <th class="text-center">Followup By eCtizen</th>
+                  <th class="text-center">Followup By User</th>
+                  <th class="text-center">Form Status</th>
+                  <th class="text-center">Next Followup By Citizen</th>
+                  <th class="text-center">Next Followup By User</th>
+                  <th class="text-center">Remarks</th>
+                  <th class="text-center">Next Followup Completed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- loop on and based on loop item make that many roww with these -->
+                <tr *ngFor="let follow of formTradeFollowUpValues">
+                  <td class="text-center">{{ follow["Followup_Date"] }}</td>
+                  <td class="text-center">
+                    {{ follow["Followup_by_e_cityzen_name"] }}
+                  </td>
+                  <td class="text-center">
+                    {{ follow["Folloup_Name"] }}
+                  </td>
+                  <td class="text-center">{{ follow["Form_Status"] }}</td>
+                  <td class="text-center">
+                    {{ follow["Next_Followup_by_e_cityzen_name"] }}
+                  </td>
+                  <td class="text-center">
+                    {{ follow["Next_Name"] }}
+                  </td>
+                  <td class="text-center">{{ follow["Remarks"] }}</td>
+                  <td class="text-center">{{ follow["Sent_To_Date"] }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="ps__rail-x" style="left: 0px; bottom: 0px">
+              <div
+                class="ps__thumb-x"
+                tabindex="0"
+                style="left: 0px; width: 0px"
+              ></div>
+            </div>
+            <div class="ps__rail-y" style="top: 0px; height: 375px; right: 0px">
+              <div
+                class="ps__thumb-y"
+                tabindex="0"
+                style="top: 0px; height: 332px"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 01/14/2021 Table Design -->
+
+    <div class="table-responsive" *ngIf="false">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>Date</th>
+            <th>Followup By eCtizen</th>
+            <th>Followup By User</th>
+            <th>Form Status</th>
+            <th>Next Followup By Citizen</th>
+            <th>Next Followup By User</th>
+            <th>Remarks</th>
+            <th>Next Followup Completed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let follow of formTradeFollowUpValues">
+            <td>{{ follow["Followup_Date"] }}</td>
+            <td>{{ follow["Followup_by_e_cityzen_name"] }}</td>
+            <td>{{ follow["Followup_by_user_name"] }}</td>
+            <td>{{ follow["Form_Status"] }}</td>
+            <td>{{ follow["Next_Followup_by_e_cityzen_name"] }}</td>
+            <td>{{ follow["Next_Followup_by_user_name"] }}</td>
+            <td>{{ follow["Remarks"] }}</td>
+            <td>{{ follow["Sent_To_Date"] }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- <div class="d-flex justify-content-center">
+    <button
+      class="btn btn-sm"
+      style="background-color: #14274e; color: white; width: 200px"
+      data-toggle="modal"
+      data-target="#theFollowUp"
+    >
+      Forward/Followup
+    </button>
+  </div> -->
+</div>
+
+<!-- write the file modal here   -->
+<!-- <div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{ modalTitle }}</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img
+          src="{{ modalImage }}"
+          alt="{{ modalTitle }}"
+          width="400px"
+          height="200px"
+        />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- write the followup modal here which will open onclick on forward/followup button; Folloup table -->
+<div
+  class="modal fade"
+  id="theFollowUp"
+  data-backdrop="static"
+  data-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5
+          *ngIf="formTradeFollowUpValues?.length > 0"
+          class="modal-title"
+          id="staticBackdropLabel"
+        >
+          Followup details
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true" (click)="onModalHide()">&times;</span>
+        </button>
+      </div>
+      <div
+        class="modal-body"
+        *ngIf="formTradeFollowUpValues?.length > 0"
+        style="overflow: hidden !important"
+      >
+        <!-- <div class="row">
+          <div class="section-title p-2 mb-3">
+            <h5 class="section-title w-100 p-2">
+              {{ formTradeFollowUpValues[0].Followup_Date }}
+            </h5>
+          </div>
+
+          <div class="col-12" *ngIf="formTradeFollowUpValues?.length > 0">
+            <div class="row justify-content-between my-3">
+              <div class="col-4">
+                <span
+                  >Followup user:
+                  {{ formTradeFollowUpValues[0].Followup_by_user_name }}
+                </span>
+              </div>
+            </div>
+
+            <div class="row justify-content-between my-3">
+              <div class="col-4">
+                <span
+                  >Next action:
+                  {{ formTradeFollowUpValues[0].Next_Followup_by_user_name }}
+                </span>
+              </div>
+            </div>
+
+            <hr />
+            <div
+              class="row justify-content-between my-3"
+              *ngIf="formTradeFollowUpValues[0].Remarks?.length > 0"
+            >
+              <div class="col-4">
+                <span
+                  >Remarks:
+                  {{ formTradeFollowUpValues[0].Remarks }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <div class="row">
+          <div class="col-6" style="max-height: 400px; overflow-y: auto">
+            <!-- <div class="timeline">
+              <div class="timeline-body">
+                <div class="timeline-item">
+                  <p class="time">
+                    {{ formTradeFollowUpValues[0].Followup_Date }}
+                  </p>
+                  <div class="content">
+                    <h2
+                      class="title"
+                      style="font-size: 1.25rem; font-weight: 500"
+                    >
+                      {{ formTradeFollowUpValues[0].Followup_by_user_name }}
+                      <span style="font-size: 1rem"
+                        >{{ formTradeFollowUpValues[0].Form_Status }}
+                      </span>
+                    </h2>
+                    <p>{{ formTradeFollowUpValues[0].Remarks }}</p>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Date</th>
+                    <th
+                      *ngIf="
+                        formTradeFollowUpValues[0]['Followup_by_e_cityzen_name']
+                          ?.length > 0
+                      "
+                    >
+                      Followup By eCtizen
+                    </th>
+                    <th>Followup By User</th>
+                    <th>Form Status</th>
+                    <th
+                      *ngIf="
+                        formTradeFollowUpValues[0][
+                          'Next_Followup_by_e_cityzen_name'
+                        ]?.length > 0
+                      "
+                    >
+                      Next Followup By Citizen
+                    </th>
+                    <th>Next Followup By User</th>
+                    <th>Remarks</th>
+                    <th>Next Followup Completed</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let follow of formTradeFollowUpValues">
+                    <td>{{ follow["Followup_Date"] }}</td>
+                    <td
+                      *ngIf="follow['Followup_by_e_cityzen_name']?.length > 0"
+                    >
+                      {{ follow["Followup_by_e_cityzen_name"] }}
+                    </td>
+                    <td>{{ follow["Followup_by_user_name"] }}</td>
+                    <td>{{ follow["Form_Status"] }}</td>
+                    <td
+                      *ngIf="
+                        follow['Next_Followup_by_e_cityzen_name']?.length > 0
+                      "
+                    >
+                      {{ follow["Next_Followup_by_e_cityzen_name"] }}
+                    </td>
+                    <td>{{ follow["Next_Followup_by_user_name"] }}</td>
+                    <td>{{ follow["Remarks"] }}</td>
+                    <td>{{ follow["Sent_To_Date"] }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div> -->
+            <!-- Timeline -->
+            <div class="card latest-update-card">
+              <div class="card-header pt-0 mt-0">
+                <h5>Latest Updates</h5>
+              </div>
+              <div class="card-body mb-0 pb-0">
+                <div class="latest-update-box">
+                  <ng-container *ngFor="let follow of formTradeFollowUpValues">
+                    <div class="row p-t-20 p-b-30">
+                      <div class="col-auto text-right update-meta">
+                        <p
+                          class="text-muted m-b-0 d-inline-flex"
+                          style="z-index: 1"
+                        >
+                          {{ follow["Followup_Date"] }}
+                        </p>
+                        <!-- margin-left was initially -22px -->
+                        <i
+                          class="feather icon-circle bg-info update-icon"
+                          style="margin-left: 16px"
+                        ></i>
+                      </div>
+                      <div class="col">
+                        <a href="#!">
+                          <h6>
+                            {{
+                              follow["Folloup_Name"] ||
+                                follow["Followup_by_e_cityzen_name"]
+                            }}
+                            :
+                            {{ follow["Form_Status"] }}
+                          </h6>
+                        </a>
+                        <p class="text-muted m-b-0">
+                          Next:
+                          {{
+                            follow["Next_Name"] ||
+                              follow["Next_Followup_by_e_cityzen_name"]
+                          }}
+                        </p>
+                        <p class="text-muted m-b-0">
+                          <span class="badge badge-dark">Remarks</span>
+                          {{ follow["Remarks"] }}
+                        </p>
+                      </div>
+                    </div>
+                  </ng-container>
+                  <!-- <div class="row p-b-30">
+                    <div class="col-auto text-right update-meta">
+                      <p class="text-muted m-b-0 d-inline-flex">4 hrs ago</p>
+                      <i
+                        class="feather icon-briefcase bg-danger update-icon"
+                      ></i>
+                    </div>
+                    <div class="col">
+                      <a href="#!">
+                        <h6>+ 5 New Products were added!</h6>
+                      </a>
+                      <p class="text-muted m-b-0">Congratulations!</p>
+                    </div>
+                  </div> -->
+                  <!-- <div class="row p-b-30">
+                    <div class="col-auto text-right update-meta">
+                      <p class="text-muted m-b-0 d-inline-flex">1 day ago</p>
+                      <i
+                        class="feather icon-check f-w-600 bg-success update-icon"
+                      ></i>
+                    </div>
+                    <div class="col">
+                      <a href="#!">
+                        <h6>Database backup completed!</h6>
+                      </a>
+                      <p class="text-muted m-b-0">
+                        Download the
+                        <span class="text-primary">
+                          <a href="#!" class="text-primary"
+                            >latest backup</a
+                          > </span
+                        >.
+                      </p>
+                    </div>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+            <!-- Timeline -->
+          </div>
+          <div class="col-6" style="overflow-y: hidden">
+            <!-- show the reactive formgroup here -->
+            <form [formGroup]="followUpForm" (ngSubmit)="onFollupSubmit()">
+              <!-- <div class="form-group">
+                <label for="selectForwardorHold">Select Date:</label>
+                <input type="date" formControlName="selectDate" />
+              </div> -->
+              <div class="form-group">
+                <label for="selectForwardorHold">Next Action:</label>
+                <select
+                  class="form-control"
+                  id="selectForward"
+                  formControlName="nextFollowUp"
+                >
+                  <!-- <option value="default" selected>
+                    Select an option here
+                  </option> -->
+
+                  <option value="Hold" [hidden]="hideHold">Hold</option>
+                  <option value="Forward">Forward</option>
+                </select>
+                <!-- <div *ngIf=""></div> -->
+              </div>
+
+              <div
+                [hidden]="isVc"
+                class="form-group"
+                *ngIf="shouldShowForwardTo"
+              >
+                <label for="selectForwardorHold">Citizen:</label>
+                <select
+                  class="form-control selectForward"
+                  id="selectForward"
+                  formControlName="forwardTo"
+                >
+                  <option value="{{ saveEcitiZenId }}">
+                    {{ this.userTypeFromThisFormNo }}
+                  </option>
+                  <!-- <option value="User">User</option> -->
+                </select>
+              </div>
+
+              <div class="form-group" *ngIf="shouldShowUserList">
+                <label for="selectForwardorHold">Select User: </label>
+                <!-- whatever option user selects/types would be retrievable from this formcontrolname -->
+                <select
+                  class="form-control"
+                  id="selectForward"
+                  formControlName="showUserType"
+                >
+                  <!-- option value and content would be from api -->
+                  <option
+                    *ngFor="let user of showThisUserNameByFormNo"
+                    [value]="user.NextFollowUID"
+                  >
+                    {{ user.Followup_by_e_cityzen_name || user.Name }}
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Remarks(*)</label>
+                <textarea
+                  formControlName="remarks"
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="3"
+                ></textarea>
+                <!-- <pre>{{ followUpForm.controls.remarks?.errors | json }}</pre> -->
+                <small
+                  *ngIf="
+                    followUpForm.controls.remarks.touched &&
+                    followUpForm.controls.remarks?.errors?.required
+                  "
+                  class="text-danger"
+                  >Required</small
+                >
+              </div>
+              <!-- <button type="submit" class="btn btn-primary btn-sm">
+                Submit
+              </button> -->
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <!-- <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+          (click)="onModalHide()"
+        >
+          Close
+        </button> -->
+        <!-- <span
+          >Status: {{ followUpForm.controls.nextFollowUp.value === "" }}
+          </span> -->
+        <ng-container *ngIf="followUpForm.controls.nextFollowUp.value === ''">
+          <button
+            [disabled]="
+              followUpForm.controls.remarks.invalid ||
+              followUpForm.controls.nextFollowUp.invalid
+            "
+            type="button"
+            class="btn btn-primary"
+            (click)="verifyNextFollowUp()"
+          >
+            Save
+          </button>
+        </ng-container>
+
+        <ng-container
+          *ngIf="followUpForm.controls.nextFollowUp.value === 'Hold'"
+        >
+          <button
+            [disabled]="
+              followUpForm.controls.remarks.invalid ||
+              followUpForm.controls.nextFollowUp.invalid
+            "
+            type="button"
+            class="btn btn-primary"
+            (click)="verifyNextFollowUp()"
+          >
+            Hold This File
+          </button>
+        </ng-container>
+
+        <!-- <span>{{ followUpForm.controls.forwardTo.value.length < 1 }}</span>
+        <span>{{ followUpForm.controls.showUserType.value.length < 1 }}</span> -->
+
+        <ng-container
+          *ngIf="
+            followUpForm.controls.nextFollowUp.value &&
+            followUpForm.controls.nextFollowUp.value === 'Forward' &&
+            followUpForm.controls.forwardTo.value.length < 1 &&
+            followUpForm.controls.showUserType.value.length < 1
+          "
+        >
+          <button
+            [disabled]="
+              followUpForm.controls.remarks.invalid ||
+              followUpForm.controls.nextFollowUp.invalid
+            "
+            type="button"
+            class="btn btn-primary"
+            (click)="verifyNextFollowUp()"
+          >
+            Forward This File
+          </button>
+        </ng-container>
+
+        <ng-container
+          *ngIf="
+            followUpForm.controls.nextFollowUp.value &&
+            followUpForm.controls.nextFollowUp.value === 'Forward' &&
+            followUpForm.controls.forwardTo.value.length > 0 &&
+            followUpForm.controls.showUserType.value.length < 1
+          "
+        >
+          <button
+            [disabled]="
+              followUpForm.controls.remarks.invalid ||
+              followUpForm.controls.nextFollowUp.invalid
+            "
+            type="button"
+            class="btn btn-primary"
+            (click)="verifyNextFollowUp()"
+          >
+            Forward This File to citizen
+          </button>
+        </ng-container>
+
+        <!-- <span>user: {{ nextUserNameToBeForwared }}</span>
+        <span
+          >userSelected: {{ followUpForm.controls.showUserType.value }}</span
+        > -->
+        <!-- <span>citi: {{ followUpForm.controls.forwardTo.value }}</span> -->
+
+        <ng-container
+          *ngIf="
+            followUpForm.controls.nextFollowUp.value &&
+            followUpForm.controls.nextFollowUp.value === 'Forward' &&
+            followUpForm.controls.forwardTo.value.length < 1 &&
+            followUpForm.controls.showUserType.value.length > 0
+          "
+        >
+          <button
+            [disabled]="
+              followUpForm.controls.remarks.invalid ||
+              followUpForm.controls.nextFollowUp.invalid
+            "
+            type="button"
+            class="btn btn-primary"
+            (click)="verifyNextFollowUp()"
+          >
+            Forward This File to {{ nextUserNameToBeForwared }}
+          </button>
+        </ng-container>
+
+        <!-- <h5>
+          {{ followUpForm.controls.nextFollowUp.value }}
+        </h5>
+        <h4>{{ loggedUserNow[0]["Name"] }}</h4>
+        <h5>selected-citi: {{ followUpForm.controls.forwardTo.value }}</h5>
+        <h5>selected-user {{ followUpForm.controls.showUserType.value }}</h5> -->
+      </div>
+    </div>
+  </div>
+</div>
